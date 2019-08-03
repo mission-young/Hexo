@@ -11,7 +11,7 @@ date: 2019-08-02 22:38:00
 
 访问Hexo主页
 <iframe src="https://hexo.io/zh-cn/" width="100%" Height="800">   </iframe>
-
+<!--more-->
 执行上述页面命令：
 ```bash
 npm install hexo-cli -g
@@ -59,5 +59,3 @@ deploy:
 ### 配置主题
 本博客采用了[ARIA主题](https://github.com/AlynxZhou/hexo-theme-aria/blob/master/README.zh_CN.md)。
 按照该作者Github配置完成主题配置选项。
-
-
