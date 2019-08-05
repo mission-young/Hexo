@@ -143,8 +143,11 @@ blogroll:
     - name: GitHub
       link: https://github.com/
       icon: <i class="fas fa-link"></i>
-    - name: Admin
+    - name: LocalAdmin
       link: http://localhost:4000/admin
+      icon: <i class="fas fa-link"></i>
+    - name: RemoteAdmin
+      link: http://blog.yfs.life:8000/admin
       icon: <i class="fas fa-link"></i>
 
 # `comment.commentjs.type`: Choose between `github` and `oschina`.
