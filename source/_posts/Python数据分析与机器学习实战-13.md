@@ -8,6 +8,7 @@ tags:
 categories:
   - 技术
 ---
+<!--more-->
 89. CBOW模型实例
 <video src="https://github.com/mission-young/video13/blob/master/课时89.mp4?raw=true" controls="controls" width="100%" height="100%">您的浏览器不支持播放该视频！</video>
 90. CBOW求解目标

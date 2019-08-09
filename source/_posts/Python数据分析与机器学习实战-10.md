@@ -8,6 +8,7 @@ tags:
 categories:
   - 技术
 ---
+<!--more-->
 61. 初始神经网络
 <video src="https://github.com/mission-young/video10/blob/master/课时61.mp4?raw=true" controls="controls" width="100%" height="100%">您的浏览器不支持播放该视频！</video>
 62. 计算机视觉所面临的的挑战

@@ -8,6 +8,7 @@ tags:
 categories:
   - 技术
 ---
+<!--more-->
 41. 决策树算法综述
 <video src="https://github.com/mission-young/video7/blob/master/课时41.mp4?raw=true" controls="controls" width="100%" height="100%">您的浏览器不支持播放该视频！</video>
 42. 决策树熵原理

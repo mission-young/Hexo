@@ -8,6 +8,7 @@ tags:
 categories:
   - 技术
 ---
+<!--more-->
 95. K-means聚类案例对NBA球员进行评估
 <video src="https://github.com/mission-young/video14/blob/master/课时95.mp4?raw=true" controls="controls" width="100%" height="100%">您的浏览器不支持播放该视频！</video>
 96. 使用K-means进行图像压缩

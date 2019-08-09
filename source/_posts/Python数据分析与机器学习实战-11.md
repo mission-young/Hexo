@@ -8,6 +8,7 @@ tags:
 categories:
   - 技术
 ---
+<!--more-->
 76. 集成算法思想
 <video src="https://github.com/mission-young/video11/blob/master/课时76.mp4?raw=true" controls="controls" width="100%" height="100%">您的浏览器不支持播放该视频！</video>
 77. xgboost基本原理

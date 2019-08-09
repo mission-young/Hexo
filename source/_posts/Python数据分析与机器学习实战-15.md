@@ -8,6 +8,7 @@ tags:
 categories:
   - 技术
 ---
+<!--more-->
 103. 使用python库分析汽车油耗功率
 <video src="https://github.com/mission-young/video15/blob/master/课时103.mp4?raw=true" controls="controls" width="100%" height="100%">您的浏览器不支持播放该视频！</video>
 104. 使用scikit-learn库建立回归模型

@@ -8,6 +8,7 @@ tags:
 categories:
   - 技术
 ---
+<!--more-->
 1. 课程介绍(主题与大纲)
 <video src="https://github.com/mission-young/video1/blob/master/课时01.mp4?raw=true" controls="controls" width="100%" height="100%">您的浏览器不支持播放该视频！</video>
 2. 机器学习概述

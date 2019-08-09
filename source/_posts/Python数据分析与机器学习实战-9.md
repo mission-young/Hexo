@@ -8,6 +8,7 @@ tags:
 categories:
   - 技术
 ---
+<!--more-->
 54. 支持向量机要解决的问题
 <video src="https://github.com/mission-young/video9/blob/master/课时54.mp4?raw=true" controls="controls" width="100%" height="100%">您的浏览器不支持播放该视频！</video>
 55. 支持向量机目标函数

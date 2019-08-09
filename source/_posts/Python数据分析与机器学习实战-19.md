@@ -8,6 +8,7 @@ tags:
 categories:
   - 技术
 ---
+<!--more-->
 140. ARIMA模型
 <video src="https://github.com/mission-young/video19/blob/master/课时140.mp4?raw=true" controls="controls" width="100%" height="100%">您的浏览器不支持播放该视频！</video>
 141. 相关函数评估方法

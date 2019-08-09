@@ -8,6 +8,7 @@ tags:
 categories:
   - 技术
 ---
+<!--more-->
 28. 单变量分析绘图
 <video src="https://github.com/mission-young/video5/blob/master/课时28.mp4?raw=true" controls="controls" width="100%" height="100%">您的浏览器不支持播放该视频！</video>
 29. 回归分析绘图

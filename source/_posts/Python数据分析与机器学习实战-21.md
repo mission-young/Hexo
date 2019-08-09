@@ -8,6 +8,7 @@ tags:
 categories:
   - 技术
 ---
+<!--more-->
 154. 预测结果并解决样本不均匀问题
 <video src="https://github.com/mission-young/video21/blob/master/课时154.mp4?raw=true" controls="controls" width="100%" height="100%">您的浏览器不支持播放该视频！</video>
 155. 数据背景介绍

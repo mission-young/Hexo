@@ -8,6 +8,7 @@ tags:
 categories:
   - 技术
 ---
+<!--more-->
 160. 内容简介
 <video src="https://github.com/mission-young/video22/blob/master/课时160.mp4?raw=true" controls="controls" width="100%" height="100%">您的浏览器不支持播放该视频！</video>
 161. 数据背景介绍

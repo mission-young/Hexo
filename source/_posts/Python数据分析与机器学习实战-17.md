@@ -8,6 +8,7 @@ tags:
 categories:
   - 技术
 ---
+<!--more-->
 129. 文本分析与关键词提取
 <video src="https://github.com/mission-young/video17/blob/master/课时129.mp4?raw=true" controls="controls" width="100%" height="100%">您的浏览器不支持播放该视频！</video>
 130. 相似度计算

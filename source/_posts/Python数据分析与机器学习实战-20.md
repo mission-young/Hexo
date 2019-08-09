@@ -8,6 +8,7 @@ tags:
 categories:
   - 技术
 ---
+<!--more-->
 149. Gensim构造word2vec模型
 <video src="https://github.com/mission-young/video20/blob/master/课时149.mp4?raw=true" controls="controls" width="100%" height="100%">您的浏览器不支持播放该视频！</video>
 150. 测试模型相似度结果

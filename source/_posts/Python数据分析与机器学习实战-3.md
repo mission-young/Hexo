@@ -8,6 +8,7 @@ tags:
 categories:
   - 技术
 ---
+<!--more-->
 17. 折线图绘制
 <video src="https://github.com/mission-young/video3/blob/master/课时17.mp4?raw=true" controls="controls" width="100%" height="100%">您的浏览器不支持播放该视频！</video>
 18. 子图操作
