@@ -13,8 +13,13 @@ date: 2019-08-18 15:18:00
 ```bash
 git clone git@github.com:mission-young/Hexo.git
 ```
+- 安装hexo
+```bash
+npm install hexo -g
+```
 - 安装node模块
 ```bash
 cd Hexo
 npm install
+npm audit fix
 ```
