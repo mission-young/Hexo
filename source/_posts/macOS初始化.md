@@ -63,3 +63,11 @@ bind-key h split-window -v
 bind-key r source-file ~/.tmux.conf \; display-message "tmux.conf reloaded"
 ```
 - [geant4]
+- ssh 
+```bash
+echo 'alias sshribll="ssh -Y -p 2727 wuchenguang@162.105.151.64"' >> ~/.zshrc
+```
+- xquartz
+```bash
+brew cask install xquartz
+```
