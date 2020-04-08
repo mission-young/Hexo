@@ -31,7 +31,7 @@ root官方为了解决弱网络连接下jupyter显示问题，把jupyter的js运
 
 把`v620`和`v618`导出的`html`文件做对比，我们把`v620`和`v618`分别定义为`offline`和`online`。两者对应的测试文件为[`
 offline.html
-`](/attachments/offline.html)和[`online.html`](/attachments/online.html).
+`](/attachments/offline.html)和[`online.html`](/attachments/online.html). 点击链接即可查看.
 
 <font color='red'>
 需要留意，在本机localhost打开hexo时，online.html也无法正常画图，这是由于html挂在了localhost:4000服务上，js判断根据服务判断跳过了绘图。把该文件下载下来，用浏览器打开可以正常显示。
@@ -158,4 +158,5 @@ sed -e '/bbbegin/!b;:a;/eeend/bb;$!{N;ba};:b;s/bbbegin.*.*eeend//' -i $1
 
 在`bash`中执行`py2html *.ipynb`或`py2html *.html`即可将其转化为有图的文件。
 
-由于转移符号的问题，部分文件可能需要重命名方能正常转化.
+由于转义符号的问题，部分文件可能需要重命名方能正常转化.
+此部分也可在`py2html`函数中用中间变量解决，这点回头再修正。
