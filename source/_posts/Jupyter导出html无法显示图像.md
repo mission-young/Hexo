@@ -33,9 +33,9 @@ root官方为了解决弱网络连接下jupyter显示问题，把jupyter的js运
 offline.html
 `](/attachments/offline.html)和[`online.html`](/attachments/online.html). 点击链接即可查看.
 
-<font color='red'>
+~~<font color='red'>
 需要留意，在本机localhost打开hexo时，online.html也无法正常画图，这是由于html挂在了localhost:4000服务上，js判断根据服务判断跳过了绘图。把该文件下载下来，用浏览器打开可以正常显示。
-</font>
+</font> 此问题已修复，Hexo跳过渲染html文件之后正常运行~~
   
 用文件比对工具对比，发现两者的差异
 
