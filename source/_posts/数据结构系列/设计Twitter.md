@@ -1,3 +1,12 @@
+title: 设计Twitter
+author: 远方
+tags:
+  - LeetCode
+  - 算法
+categories:
+  - LeetCode破局攻略
+date: 2016-01-01 19:20:00
+---
 # 设计Twitter
 
 「design Twitter」是 LeetCode 上第 335 道题目，不仅题目本身很有意思，而且把合并多个有序链表的算法和面向对象设计（OO design）结合起来了，很有实际意义，本文就带大家来看看这道题。
@@ -102,13 +111,13 @@ class Tweet {
 }
 ```
 
-![tweet](../pictures/设计Twitter/tweet.jpg)
+![tweet](images/LeetCode破局攻略/设计Twitter/tweet.jpg)
 
 **2、User 类的实现**
 
 我们根据实际场景想一想，一个用户需要存储的信息有 userId，关注列表，以及该用户发过的推文列表。其中关注列表应该用集合（Hash Set）这种数据结构来存，因为不能重复，而且需要快速查找；推文列表应该由链表这种数据结构储存，以便于进行有序合并的操作。画个图理解一下：
 
-![User](../pictures/设计Twitter/user.jpg)
+![User](images/LeetCode破局攻略/设计Twitter/user.jpg)
 
 除此之外，根据面向对象的设计原则，「关注」「取关」和「发文」应该是 User 的行为，况且关注列表和推文列表也存储在 User 类中，所以我们也应该给 User 添加 follow，unfollow 和 post 这几个方法：
 
@@ -251,7 +260,7 @@ public List<Integer> getNewsFeed(int userId) {
 
 这个过程是这样的，下面是我制作的一个 GIF 图描述合并链表的过程。假设有三个 Tweet 链表按 time 属性降序排列，我们把他们降序合并添加到 res 中。注意图中链表节点中的数字是 time 属性，不是 id 属性：
 
-![gif](../pictures/设计Twitter/merge.gif)
+![gif](images/LeetCode破局攻略/设计Twitter/merge.gif)
 
 至此，这道一个极其简化的 Twitter 时间线功能就设计完毕了。
 
@@ -264,7 +273,7 @@ public List<Integer> getNewsFeed(int userId) {
 
 当然，实际应用中的社交 App 数据量是巨大的，考虑到数据库的读写性能，我们的设计可能承受不住流量压力，还是有些太简化了。而且实际的应用都是一个极其庞大的工程，比如下图，是 Twitter 这样的社交网站大致的系统结构：
 
-![design](../pictures/设计Twitter/design.png)
+![design](images/LeetCode破局攻略/设计Twitter/design.png)
 
 我们解决的问题应该只能算 Timeline Service 模块的一小部分，功能越多，系统的复杂性可能是指数级增长的。所以说合理的顶层设计十分重要，其作用是远超某一个算法的。
 
@@ -274,11 +283,11 @@ PS：本文前两张图片和 GIF 是我第一次尝试用平板的绘图软件�
 
 坚持原创高质量文章，致力于把算法问题讲清楚，欢迎关注我的公众号 labuladong 获取最新文章：
 
-![labuladong](../pictures/labuladong.jpg)
+![labuladong](images/LeetCode破局攻略/labuladong.jpg)
 
 
-[上一篇：特殊数据结构：单调队列](../数据结构系列/单调队列.md)
+[上一篇：特殊数据结构：单调队列](/2016/01/01/数据结构系列/单调队列)
 
-[下一篇：递归反转链表的一部分](../数据结构系列/递归反转链表的一部分.md)
+[下一篇：递归反转链表的一部分](/2016/01/01/数据结构系列/递归反转链表的一部分)
 
-[目录](../README.md#目录)
+[目录](/2016/01/01/README.md#目录)

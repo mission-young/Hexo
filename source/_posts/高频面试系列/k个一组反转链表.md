@@ -1,10 +1,19 @@
+title: k个一组反转链表
+author: 远方
+tags:
+  - LeetCode
+  - 算法
+categories:
+  - LeetCode破局攻略
+date: 2016-01-01 19:20:00
+---
 # 如何k个一组反转链表
 
 之前的文章「递归反转链表的一部分」讲了如何递归地反转一部分链表，有读者就问如何迭代地反转链表，这篇文章解决的问题也需要反转链表的函数，我们不妨就用迭代方式来解决。
 
 本文要解决「K 个一组反转链表」，不难理解：
 
-![](../pictures/kgroup/title.png)
+![](images/LeetCode破局攻略/kgroup/title.png)
 
 这个问题经常在面经中看到，而且 LeetCode 上难度是 Hard，它真的有那么难吗？
 
@@ -12,15 +21,15 @@
 
 ### 一、分析问题
 
-首先，前文[学习数据结构的框架思维](../算法思维系列/学习数据结构和算法的框架思维.md)提到过，链表是一种兼具递归和迭代性质的数据结构，认真思考一下可以发现**这个问题具有递归性质**。
+首先，前文[学习数据结构的框架思维](/2016/01/01/算法思维系列/学习数据结构和算法的框架思维)提到过，链表是一种兼具递归和迭代性质的数据结构，认真思考一下可以发现**这个问题具有递归性质**。
 
 什么叫递归性质？直接上图理解，比如说我们对这个链表调用 `reverseKGroup(head, 2)`，即以 2 个节点为一组反转链表：
 
-![](../pictures/kgroup/1.jpg)
+![](images/LeetCode破局攻略/kgroup/1.jpg)
 
 如果我设法把前 2 个节点反转，那么后面的那些节点怎么处理？后面的这些节点也是一条链表，而且规模（长度）比原来这条链表小，这就叫**子问题**。
 
-![](../pictures/kgroup/2.jpg)
+![](images/LeetCode破局攻略/kgroup/2.jpg)
 
 我们可以直接递归调用 `reverseKGroup(cur, 2)`，因为子问题和原问题的结构完全相同，这就是所谓的递归性质。
 
@@ -28,15 +37,15 @@
 
 **1、先反转以 `head` 开头的 `k` 个元素**。
 
-![](../pictures/kgroup/3.jpg)
+![](images/LeetCode破局攻略/kgroup/3.jpg)
 
 **2、将第 `k + 1` 个元素作为 `head` 递归调用 `reverseKGroup` 函数**。
 
-![](../pictures/kgroup/4.jpg)
+![](images/LeetCode破局攻略/kgroup/4.jpg)
 
 **3、将上述两个过程的结果连接起来**。
 
-![](../pictures/kgroup/5.jpg)
+![](images/LeetCode破局攻略/kgroup/5.jpg)
 
 整体思路就是这样了，最后一点值得注意的是，递归函数都有个 base case，对于这个问题是什么呢？
 
@@ -64,7 +73,7 @@ ListNode reverse(ListNode a) {
 }
 ```
 
-![](../pictures/kgroup/8.gif)
+![](images/LeetCode破局攻略/kgroup/8.gif)
 
 这次使用迭代思路来实现的，借助动画理解应该很容易。
 
@@ -112,11 +121,11 @@ ListNode reverseKGroup(ListNode head, int k) {
 
 解释一下 `for` 循环之后的几句代码，注意 `reverse` 函数是反转区间 `[a, b)`，所以情形是这样的：
 
-![](../pictures/kgroup/6.jpg)
+![](images/LeetCode破局攻略/kgroup/6.jpg)
 
 递归部分就不展开了，整个函数递归完成之后就是这个结果，完全符合题意：
 
-![](../pictures/kgroup/7.jpg)
+![](images/LeetCode破局攻略/kgroup/7.jpg)
 
 ### 三、最后说两句
 
@@ -128,11 +137,11 @@ ListNode reverseKGroup(ListNode head, int k) {
 
 坚持原创高质量文章，致力于把算法问题讲清楚，欢迎关注我的公众号 labuladong 获取最新文章：
 
-![labuladong](../pictures/labuladong.jpg)
+![labuladong](images/LeetCode破局攻略/labuladong.jpg)
 
 
-[上一篇：如何寻找最长回文子串](../高频面试系列/最长回文子串.md)
+[上一篇：如何寻找最长回文子串](/2016/01/01/高频面试系列/最长回文子串)
 
-[下一篇：如何判定括号合法性](../高频面试系列/合法括号判定.md)
+[下一篇：如何判定括号合法性](/2016/01/01/高频面试系列/合法括号判定)
 
-[目录](../README.md#目录)
+[目录](/2016/01/01/README.md#目录)

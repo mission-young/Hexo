@@ -1,3 +1,12 @@
+title: twoSum问题的核心思想
+author: 远方
+tags:
+  - LeetCode
+  - 算法
+categories:
+  - LeetCode破局攻略
+date: 2016-01-01 19:20:00
+---
 # twoSum问题的核心思想
 
 Two Sum 系列问题在 LeetCode 上有好几道，这篇文章就挑出有代表性的几道，介绍一下这种问题怎么解决。
@@ -155,11 +164,11 @@ int[] twoSum(int[] nums, int target) {
 
 坚持原创高质量文章，致力于把算法问题讲清楚，欢迎关注我的公众号 labuladong 获取最新文章：
 
-![labuladong](../pictures/labuladong.jpg)
+![labuladong](images/LeetCode破局攻略/labuladong.jpg)
 
 
-[上一篇：滑动窗口技巧](../算法思维系列/滑动窗口技巧.md)
+[上一篇：滑动窗口技巧](/2016/01/01/算法思维系列/滑动窗口技巧)
 
-[下一篇：常用的位操作](../算法思维系列/常用的位操作.md)
+[下一篇：常用的位操作](/2016/01/01/算法思维系列/常用的位操作)
 
-[目录](../README.md#目录)
+[目录](/2016/01/01/README.md#目录)

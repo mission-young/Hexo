@@ -1,3 +1,12 @@
+title: UnionFind算法详解
+author: 远方
+tags:
+  - LeetCode
+  - 算法
+categories:
+  - LeetCode破局攻略
+date: 2016-01-01 19:20:00
+---
 # Union-Find算法详解
 
 今天讲讲 Union-Find 算法，也就是常说的并查集算法，主要是解决图论中「动态连通性」问题的。名词很高端，其实特别好理解，等会解释，另外这个算法的应用都非常有趣。
@@ -10,7 +19,7 @@
 
 简单说，动态连通性其实可以抽象成给一幅图连线。比如下面这幅图，总共有 10 个节点，他们互不相连，分别用 0~9 标记：
 
-![](../pictures/unionfind/1.jpg)
+![](images/LeetCode破局攻略/unionfind/1.jpg)
 
 现在我们的 Union-Find 算法主要需要实现这两个 API：
 
@@ -39,7 +48,7 @@ class UF {
 
 再调用`union(1, 2)`，这时 0,1,2 都被连通，调用`connected(0, 2)`也会返回 true，连通分量变为 8 个。
 
-![](../pictures/unionfind/2.jpg)
+![](images/LeetCode破局攻略/unionfind/2.jpg)
 
 判断这种「等价关系」非常实用，比如说编译器判断同一个变量的不同引用，比如社交网络中的朋友圈计算等等。
 
@@ -51,7 +60,7 @@ class UF {
 
 怎么用森林来表示连通性呢？我们设定树的每个节点有一个指针指向其父节点，如果是根节点的话，这个指针指向自己。比如说刚才那幅 10 个节点的图，一开始的时候没有相互连通，就是这样：
 
-![](../pictures/unionfind/3.jpg)
+![](images/LeetCode破局攻略/unionfind/3.jpg)
 
 ```java
 class UF {
@@ -76,7 +85,7 @@ class UF {
 
 **如果某两个节点被连通，则让其中的（任意）一个节点的根节点接到另一个节点的根节点上**：
 
-![](../pictures/unionfind/4.jpg)
+![](images/LeetCode破局攻略/unionfind/4.jpg)
 
 ```java
 public void union(int p, int q) {
@@ -106,7 +115,7 @@ public int count() {
 
 **这样，如果节点`p`和`q`连通的话，它们一定拥有相同的根节点**：
 
-![](../pictures/unionfind/5.jpg)
+![](images/LeetCode破局攻略/unionfind/5.jpg)
 
 ```java
 public boolean connected(int p, int q) {
@@ -122,7 +131,7 @@ public boolean connected(int p, int q) {
 
 `find`主要功能就是从某个节点向上遍历到树根，其时间复杂度就是树的高度。我们可能习惯性地认为树的高度就是`logN`，但这并不一定。`logN`的高度只存在于平衡二叉树，对于一般的树可能出现极端不平衡的情况，使得「树」几乎退化成「链表」，树的高度最坏情况下可能变成`N`。
 
-![](../pictures/unionfind/6.jpg)
+![](images/LeetCode破局攻略/unionfind/6.jpg)
 
 所以说上面这种解法，`find`,`union`,`connected`的时间复杂度都是 O(N)。这个复杂度很不理想的，你想图论解决的都是诸如社交网络这样数据规模巨大的问题，对于`union`和`connected`的调用非常频繁，每次调用需要线性时间完全不可忍受。
 
@@ -146,7 +155,7 @@ public void union(int p, int q) {
 
 我们一开始就是简单粗暴的把`p`所在的树接到`q`所在的树的根节点下面，那么这里就可能出现「头重脚轻」的不平衡状况，比如下面这种局面：
 
-![](../pictures/unionfind/7.jpg)
+![](images/LeetCode破局攻略/unionfind/7.jpg)
 
 长此以往，树可能生长得很不平衡。**我们其实是希望，小一些的树接到大一些的树下面，这样就能避免头重脚轻，更平衡一些**。解决方法是额外使用一个`size`数组，记录每棵树包含的节点数，我们不妨称为「重量」：
 
@@ -201,7 +210,7 @@ public void union(int p, int q) {
 
 这步优化特别简单，所以非常巧妙。我们能不能进一步压缩每棵树的高度，使树高始终保持为常数？
 
-![](../pictures/unionfind/8.jpg)
+![](images/LeetCode破局攻略/unionfind/8.jpg)
 
 这样`find`就能以 O(1) 的时间找到某一节点的根节点，相应的，`connected`和`union`复杂度都下降为 O(1)。
 
@@ -220,7 +229,7 @@ private int find(int x) {
 
 这个操作有点匪夷所思，看个 GIF 就明白它的作用了（为清晰起见，这棵树比较极端）：
 
-![](../pictures/unionfind/9.gif)
+![](images/LeetCode破局攻略/unionfind/9.gif)
 
 可见，调用`find`函数每次向树根遍历的同时，顺手将树高缩短了，最终所有树高都不会超过 3（`union`的时候树高可能达到 3）。
 
@@ -291,10 +300,10 @@ Union-Find 算法的复杂度可以这样分析：构造函数初始化数据结
 
 **致力于把算法讲清楚！欢迎关注我的微信公众号 labuladong，查看更多通俗易懂的文章**：
 
-![labuladong](../pictures/labuladong.png)
+![labuladong](images/LeetCode破局攻略/labuladong.png)
 
-[上一篇：如何调度考生的座位](../高频面试系列/座位调度.md)
+[上一篇：如何调度考生的座位](/2016/01/01/高频面试系列/座位调度)
 
-[下一篇：Union-Find算法应用](../算法思维系列/UnionFind算法应用.md)
+[下一篇：Union-Find算法应用](/2016/01/01/算法思维系列/UnionFind算法应用)
 
-[目录](../README.md#目录)
+[目录](/2016/01/01/README.md#目录)

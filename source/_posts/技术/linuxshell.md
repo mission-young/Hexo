@@ -1,3 +1,12 @@
+title: linuxshell
+author: 远方
+tags:
+  - LeetCode
+  - 算法
+categories:
+  - LeetCode破局攻略
+date: 2016-01-01 19:20:00
+---
 我个人很喜欢使用 Linux 系统，虽然说 Windows 的图形化界面做的确实比 Linux 好，但是对脚本的支持太差了。一开始有点不习惯命令行操作，但是熟悉了之后反而发现移动鼠标点点点才是浪费时间的罪魁祸首。。。
 
 **那么对于 Linux 命令行，本文不是介绍某些命令的用法，而是说明一些简单却特别容易让人迷惑的细节问题**。
@@ -96,7 +105,7 @@ $ nohub some_cmd &
 
 shell 的行为可以测试，使用`set -x`命令，会开启 shell 的命令回显，你可以通过回显观察 shell 到底在执行什么命令：
 
-![](../pictures/linuxshell/1.png)
+![](images/LeetCode破局攻略/linuxshell/1.png)
 
 可见 `echo $(cmd)` 和 `echo "$(cmd)"`，结果差不多，但是仍然有区别。注意观察，双引号转义完成的结果会自动增加单引号，而前者不会。
 
@@ -131,11 +140,11 @@ $ sudo /home/fdl/bin/connect.sh
 
 坚持原创高质量文章，致力于把算法问题讲清楚，欢迎关注我的公众号 labuladong 获取最新文章：
 
-![labuladong](../pictures/labuladong.jpg)
+![labuladong](images/LeetCode破局攻略/labuladong.jpg)
 
 
-[上一篇：一文看懂 session 和 cookie](../技术/session和cookie.md)
+[上一篇：一文看懂 session 和 cookie](/2016/01/01/技术/session和cookie)
 
-[下一篇：加密算法的前身今世](../技术/密码技术.md)
+[下一篇：加密算法的前身今世](/2016/01/01/技术/密码技术)
 
-[目录](../README.md#目录)
+[目录](/2016/01/01/README.md#目录)

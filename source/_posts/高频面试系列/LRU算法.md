@@ -1,3 +1,12 @@
+title: LRU算法
+author: 远方
+tags:
+  - LeetCode
+  - 算法
+categories:
+  - LeetCode破局攻略
+date: 2016-01-01 19:20:00
+---
 # LRU算法详解
 
 ### 一、什么是 LRU 算法
@@ -10,17 +19,17 @@ LRU 缓存淘汰算法就是一种常用策略。LRU 的全称是 Least Recently
 
 举个简单的例子，安卓手机都可以把软件放到后台运行，比如我先后打开了「设置」「手机管家」「日历」，那么现在他们在后台排列的顺序是这样的：
 
-![jietu](../pictures/LRU%E7%AE%97%E6%B3%95/1.jpg)
+![jietu](images/LeetCode破局攻略/LRU%E7%AE%97%E6%B3%95/1.jpg)
 
 但是这时候如果我访问了一下「设置」界面，那么「设置」就会被提前到第一个，变成这样：
 
-![jietu](../pictures/LRU%E7%AE%97%E6%B3%95/2.jpg)
+![jietu](images/LeetCode破局攻略/LRU%E7%AE%97%E6%B3%95/2.jpg)
 
 假设我的手机只允许我同时开 3 个应用程序，现在已经满了。那么如果我新开了一个应用「时钟」，就必须关闭一个应用为「时钟」腾出一个位置，关那个呢？
 
 按照 LRU 的策略，就关最底下的「手机管家」，因为那是最久未使用的，然后把新开的应用放到最上面：
 
-![jietu](../pictures/LRU%E7%AE%97%E6%B3%95/3.jpg)
+![jietu](images/LeetCode破局攻略/LRU%E7%AE%97%E6%B3%95/3.jpg)
 
 现在你应该理解 LRU（Least Recently Used）策略了。当然还有其他缓存淘汰策略，比如不要按访问的时序来淘汰，而是按访问频率（LFU 策略）来淘汰等等，各有应用场景。本文讲解 LRU 算法策略。
 
@@ -70,7 +79,7 @@ cache.put(1, 4);
 
 LRU 缓存算法的核心数据结构就是哈希链表，双向链表和哈希表的结合体。这个数据结构长这样：
 
-![HashLinkedList](../pictures/LRU%E7%AE%97%E6%B3%95/4.jpg)
+![HashLinkedList](images/LeetCode破局攻略/LRU%E7%AE%97%E6%B3%95/4.jpg)
 
 思想很简单，就是借助哈希表赋予了链表快速查找的特性嘛：可以快速查找某个 key 是否存在缓存（链表）中，同时可以快速删除、添加节点。回想刚才的例子，这种数据结构是不是完美解决了 LRU 缓存的需求？
 
@@ -217,10 +226,10 @@ if (cap == cache.size()) {
 
 **致力于把算法讲清楚！欢迎关注我的微信公众号 labuladong，查看更多通俗易懂的文章**：
 
-![labuladong](../pictures/labuladong.png)
+![labuladong](images/LeetCode破局攻略/labuladong.png)
 
-[上一篇：二叉堆详解实现优先级队列](../数据结构系列/二叉堆详解实现优先级队列.md)
+[上一篇：二叉堆详解实现优先级队列](/2016/01/01/数据结构系列/二叉堆详解实现优先级队列)
 
-[下一篇：二叉搜索树操作集锦](../数据结构系列/二叉搜索树操作集锦.md)
+[下一篇：二叉搜索树操作集锦](/2016/01/01/数据结构系列/二叉搜索树操作集锦)
 
-[目录](../README.md#目录)
+[目录](/2016/01/01/README.md#目录)

@@ -1,3 +1,12 @@
+title: UnionFind算法应用
+author: 远方
+tags:
+  - LeetCode
+  - 算法
+categories:
+  - LeetCode破局攻略
+date: 2016-01-01 19:20:00
+---
 # Union-Find算法应用
 
 上篇文章很多读者对于 Union-Find 算法的应用表示很感兴趣，这篇文章就拿几道 LeetCode 题目来讲讲这个算法的巧妙用法。
@@ -79,7 +88,7 @@ class UF {
 
 我认为，论时间复杂度的话，确实，不需要重量平衡也是 O(1)。但是如果加上 `size` 数组辅助，效率还是略微高一些，比如下面这种情况：
 
-![](../pictures/unionfind应用/1.jpg)
+![](images/LeetCode破局攻略/unionfind应用/1.jpg)
 
 如果带有重量平衡优化，一定会得到情况一，而不带重量优化，可能出现情况二。高度为 3 时才会触发路径压缩那个 `while` 循环，所以情况一根本不会触发路径压缩，而情况二会多执行很多次路径压缩，将第三层节点压缩到第二层。
 
@@ -99,7 +108,7 @@ void solve(char[][] board);
 
 注意哦，必须是四面被围的 `O` 才能被换成 `X`，也就是说边角上的 `O` 一定不会被围，进一步，与边角上的 `O` 相连的 `O` 也不会被 `X` 围四面，也不会被替换。
 
-![](../pictures/unionfind应用/2.jpg)
+![](images/LeetCode破局攻略/unionfind应用/2.jpg)
 
 PS：这让我想起小时候玩的棋类游戏「黑白棋」，只要你用两个棋子把对方的棋子夹在中间，对方的子就被替换成你的子。可见，占据四角的棋子是无敌的，与其相连的边棋子也是无敌的（无法被夹掉）。
 
@@ -109,7 +118,7 @@ PS：这让我想起小时候玩的棋类游戏「黑白棋」，只要你用两
 
 **你可以把那些不需要被替换的 `O` 看成一个拥有独门绝技的门派，它们有一个共同祖师爷叫 `dummy`，这些 `O` 和 `dummy` 互相连通，而那些需要被替换的 `O` 与 `dummy` 不连通**。
 
-![](../pictures/unionfind应用/3.jpg)
+![](images/LeetCode破局攻略/unionfind应用/3.jpg)
 
 这就是 Union-Find 的核心思路，明白这个图，就很容易看懂代码了。
 
@@ -220,11 +229,11 @@ boolean equationsPossible(String[] equations) {
 
 坚持原创高质量文章，致力于把算法问题讲清楚，欢迎关注我的公众号 labuladong 获取最新文章：
 
-![labuladong](../pictures/labuladong.jpg)
+![labuladong](images/LeetCode破局攻略/labuladong.jpg)
 
 
-[上一篇：Union-Find算法详解](../算法思维系列/UnionFind算法详解.md)
+[上一篇：Union-Find算法详解](/2016/01/01/算法思维系列/UnionFind算法详解)
 
-[下一篇：一行代码就能解决的算法题](../高频面试系列/一行代码解决的智力题.md)
+[下一篇：一行代码就能解决的算法题](/2016/01/01/高频面试系列/一行代码解决的智力题)
 
-[目录](../README.md#目录)
+[目录](/2016/01/01/README.md#目录)
