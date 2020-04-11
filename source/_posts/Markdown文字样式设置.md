@@ -23,12 +23,9 @@ tags:
 - <font color=Blue>我是蓝色</font>
 - <font size=5>我是尺寸</font>
 - <font face="黑体" color=green size=5>我是黑体，绿色，尺寸为5</font>
-
 ## 为文字添加背景色
 由于 style 标签和标签的 style 属性不被支持，所以这里只能是借助 table, tr, td 等表格标签的 bgcolor 属性来实现背景色。故这里对于文字背景色的设置，只是将那一整行看作一个表格，更改了那个格子的背景色（bgcolor）
 ```markdown
 <table><tr><td bgcolor=yellow>背景色yellow</td></tr></table>
 ```
-
 <table><tr><td bgcolor=yellow>背景色yellow</td></tr></table>
-

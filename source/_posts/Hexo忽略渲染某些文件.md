@@ -15,7 +15,6 @@ skip_render: "attachments/*"
 ```yml
 skip_render: "attachments/*.html"
 ```
-
 这里提一下渲染`html`与否的区别：
 1. 渲染会增加hexo启动的时常
 2. 渲染后html会内嵌入hexo框架中，成为其子界面

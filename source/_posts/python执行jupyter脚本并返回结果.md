@@ -8,21 +8,16 @@ categories:
 date: 2019-11-24 19:39:00
 ---
 系统中只存在python环境而没有jupyter环境可用，希望python能够直接执行jupyter脚本(\*.ipynb)文件，并将结果返回（同时输出到\*.ipynb脚本和终端）.
-
 [下载地址](https://raw.githubusercontent.com/mission-young/python_scripts/master/jupyter.py)
-
 ```python3
 #!/usr/bin/python3
 import sys
 import json
 import os
-
 class tovar():
     """重定向python的输出至变量
-
     print()函数实际上是 sys.stdout 函数，默认输出到终端。
     这里将print()函数重定向到变量
-
     Attributes:
         str: 用于存储print函数输出的结果
     """
@@ -47,7 +42,6 @@ class tovar():
         """
         return self.str.rstrip()
 
-
 def writecode(s,mode='update'):
     """
     update模式时，为累加模式
@@ -62,21 +56,17 @@ def writecode(s,mode='update'):
     fout.close()
 # 获得要转化的jupyter文件
 filename=sys.argv[1]
-
 # jupyter文件格式实际上是json格式，选择自带的json库来读取，读取后关闭文件
 file=open(filename)
 data=json.load(file)
 file.close()
-
 cells=data['cells']
 # 命令单元格的id，必须设置，否则不会显示执行结果
 id=1
-
 # term暂存，为输出到终端，随后将print重定向到变量var
 var=tovar()
 term=sys.stdout
 sys.stdout=var
-
 
 for cell in cells:
     cell_type=cell['cell_type']
@@ -92,11 +82,9 @@ for cell in cells:
         print('process: %d/%d' %(id,len(cells)-1))
         sys.stdout=var
         id+=1
-
         codes=cell['source']
         #新建代码单元格存储文件
         writecode('','recreate')
-
         for code in codes:
             # 修正jupyter中一些magic code
             if 'matplotlib inline' in code:
@@ -131,5 +119,4 @@ for cell in cells:
     file=open(filename,'w')
     json.dump(data,file)
     file.close()
-
 ```

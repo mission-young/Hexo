@@ -4,9 +4,7 @@ date: 2020-04-08 13:41:20
 tags:
 ---
 此问题是由于root版本变更引起的。
-
 在`root v620`[更新日志](https://root.cern/doc/v620/release-notes.html#release-6.2004)中可以看到关于网络部分做了诸多变更。
-
 
 # Core Libraries
 - Speed-up startup, in particular in case of no or poor network accesibility, by avoiding a network access that was used as input to generate a globally unique ID for the current process.
@@ -24,31 +22,23 @@ tags:
 ```
 从上述变更中可以解释最近版本为什么突然jupyter无法正常显示图像了。
 root官方为了解决弱网络连接下jupyter显示问题，把jupyter的js运行库放在了新版本root安装包中，运行jupyter时会自动调用这个js库。 但是需要留意的是 <font color='red'>仅使用root --notebook这种方式启动jupyter才会生效！使用jupyter-notebook的方式启动并不会生效！！图依旧无法正常显示。</font> 而前面的博客[Jupyter离线配置](/2020/03/25/Jupyter离线配置/)中已经提过，为了解决这个问题，在jupyter的配置文件中可以新增`static`路径来解决，解决了在jupyter运行时的绘图问题。
-
 但这个问题也带来了其他的问题。其一是，无法自由地分享`.ipynb`和对应导出的`.html`。分享的文件在nbviewer中无法显示图像。猜测是root更新之后把原来的链接进行了替换。
-
 为了做验证，新建了一个测试linux环境，编译安装了`root v61902`，发现问题和`v620`一致，下载`v61802`并安装jupyter环境，无需任何配置，输入`jupyter-notebook`即可正常显示图像和导出有图的html文件，`nbviewer`也可正常显示上传到github的`.ipynb`文件。显然，这个版本和最初用的版本一致，在弱网条件下无法正常显示。
-
 把`v620`和`v618`导出的`html`文件做对比，我们把`v620`和`v618`分别定义为`offline`和`online`。两者对应的测试文件为[`
 offline.html
 `](/attachments/offline.html)和[`online.html`](/attachments/online.html). 点击链接即可查看.
-
 ~~<font color='red'>
 需要留意，在本机localhost打开hexo时，online.html也无法正常画图，这是由于html挂在了localhost:4000服务上，js判断根据服务判断跳过了绘图。把该文件下载下来，用浏览器打开可以正常显示。
 </font> 此问题已修复，Hexo跳过渲染html文件之后正常运行~~
   
 用文件比对工具对比，发现两者的差异
-
 #### offline
 ```html
 <script>
 if (typeof require !== 'undefined') {
-
     // All requirements met (we are in jupyter notebooks or we loaded requirejs before).
     display_root_plot_1586256162911();
-
 } else {
-
     // We are in jupyterlab, we need to insert requirejs and configure it.
     // Jupyterlab might be installed in a different base_url so we need to know it.
     try {
@@ -56,7 +46,6 @@ if (typeof require !== 'undefined') {
     } catch(_) {
         var base_url = '/';
     }
-
     // Try loading a local version of requirejs and fallback to cdn if not possible.
     requirejs_load(base_url + 'static/components/requirejs/require.js', requirejs_success(base_url), function(){
         requirejs_load('https://cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.min.js', requirejs_success(base_url), function(){
@@ -64,7 +53,6 @@ if (typeof require !== 'undefined') {
         });
     });
 }
-
 function requirejs_load(src, on_load, on_error) {
     var script = document.createElement('script');
     script.src = src;
@@ -72,7 +60,6 @@ function requirejs_load(src, on_load, on_error) {
     script.onerror = on_error;
     document.head.appendChild(script);
 }
-
 function requirejs_success(base_url) {
     return function() {
         require.config({
@@ -81,7 +68,6 @@ function requirejs_success(base_url) {
         display_root_plot_1586256162911();
     }
 }
-
 function display_root_plot_1586256162911() {
     require(['scripts/JSRootCore'],
         function(Core) {
@@ -119,7 +105,6 @@ function display_root_plot_1586256162911() {
 在`online`部分，调用了root官网的JSRootCore库，而`offline`则试图从本地服务器寻找。在
 ```js
 if (typeof require !== 'undefined') {
-
     // All requirements met (we are in jupyter notebooks or we loaded requirejs before).
     display_root_plot_1586256162911();
 } 
@@ -135,13 +120,11 @@ requirejs.config({
  require(['JSRootCore'],
 ```
 即可.
-
 在`bash`中执行
 ```bash
 sed -i "s/require(['scripts\/JSRootCore'\],/requirejs.config({paths:{'JSRootCore':'https:\/\/root.cern.ch\/js\/notebook\/\/scripts\/JSRootCore',}});require(\['JSRootCore'\],/g" output.html
 ```
 `output.html`为v620导出的html. 由此即可实现导出的html正常绘图.
-
 如果需要发布或共享ipynb文件,则需要额外删除其他部分。
 为了方便起见，在bashrc中构造函数
 ```shell
@@ -155,8 +138,6 @@ sed -i "s/\"function display_root_plot/eeend\"function display_root_plot/g" $1
 sed -e '/bbbegin/!b;:a;/eeend/bb;$!{N;ba};:b;s/bbbegin.*.*eeend//' -i $1
 }
 ```
-
 在`bash`中执行`py2html *.ipynb`或`py2html *.html`即可将其转化为有图的文件。
-
 由于转义符号的问题，部分文件可能需要重命名方能正常转化.
 此部分也可在`py2html`函数中用中间变量解决，这点回头再修正。

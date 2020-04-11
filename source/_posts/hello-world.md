@@ -8,7 +8,6 @@ author: 远方
 date: 2019-08-02 22:38:00
 ---
 ## 搭建Hexo环境
-
 访问Hexo主页
 <iframe src="https://hexo.io/zh-cn/" width="100%" Height="800">   </iframe>
 <!--more-->
@@ -21,20 +20,15 @@ npm install
 hexo server
 ```
 即可完成hexo的安装。
-
 ### 安装插件：
-
 <iframe src="https://jaredforsyth.com/hexo-admin/" width="100%" Height="800">   </iframe>
-
 执行页面命令：
 ```bash
 npm install --save hexo-admin
 ```
 进入[设置界面](http://localhost:4000/admin/#/settings)：
-
 ![upload successful](/images/pasted-1.png)
 勾选显示行号以及拼写检查。
-
 随后在blog根目录添加脚本`hexo-publish.sh`：
 ```bash
 #!/usr/bin/env sh
@@ -55,7 +49,6 @@ deploy:
   branch: master
 ```
 至此，即可完成hexo的在线编辑及部署Github。
-
 ### 配置主题
 本博客采用了[ARIA主题](https://github.com/AlynxZhou/hexo-theme-aria/blob/master/README.zh_CN.md)。
 按照该作者Github配置完成主题配置选项。

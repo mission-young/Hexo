@@ -9,7 +9,6 @@ categories:
 date: 2019-08-18 15:11:00
 ---
 macOS ssh server默认端口为22，而学校网络政策一天三变，突然间无法在校外连通ssh。因而需要更改macOS默认端口。
-
 macOS更改sshd服务端口的方式不同于linux更改`/etc/ssh/sshd_config`的方式。需要更改`/System/Library/LaunchDaemons/ssh.plist`文件。
 其中
 ```xml
