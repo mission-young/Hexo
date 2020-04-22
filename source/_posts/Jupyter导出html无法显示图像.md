@@ -122,7 +122,7 @@ requirejs.config({
 即可.
 在`bash`中执行
 ```bash
-sed -i "s/require(['scripts\/JSRootCore'\],/requirejs.config({paths:{'JSRootCore':'https:\/\/root.cern.ch\/js\/notebook\/\/scripts\/JSRootCore',}});require(\['JSRootCore'\],/g" output.html
+sed -i "s/require(\['scripts\/JSRootCore'\],/requirejs.config({paths:{'JSRootCore':'https:\/\/root.cern.ch\/js\/notebook\/\/scripts\/JSRootCore',}});require(\['JSRootCore'\],/g" output.html
 ```
 `output.html`为v620导出的html. 由此即可实现导出的html正常绘图.
 如果需要发布或共享ipynb文件,则需要额外删除其他部分。
@@ -130,7 +130,7 @@ sed -i "s/require(['scripts\/JSRootCore'\],/requirejs.config({paths:{'JSRootCore
 ```shell
 py2html()
 {
-sed -i "s/require(['scripts\/JSRootCore'\],/requirejs.config({paths:{'JSRootCore':'https:\/\/root.cern.ch\/js\/notebook\/\/scripts\/JSRootCore',}});require(\['JSRootCore'\],/g" $1
+sed -i "s/require(\['scripts\/JSRootCore'\],/requirejs.config({paths:{'JSRootCore':'https:\/\/root.cern.ch\/js\/notebook\/\/scripts\/JSRootCore',}});require(\['JSRootCore'\],/g" $1
 sed -i "s/\"if (typeof/bbbegin/g" $1
 sed -i "s/\"    display_root_plot/eeend\"    display_root_plot/g" $1
 sed -i "s/\"} else {/bbbegin/g" $1
